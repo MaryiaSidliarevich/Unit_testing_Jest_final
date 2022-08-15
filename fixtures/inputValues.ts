@@ -12,6 +12,12 @@ export const correctInputValuesInUpperCase: Input = {
     inputEmail: "JULIA1986@gmail.com"
 }
 
+export const correctInputValuesWithSpaces: Input = {
+    inputLogin: "julia  ",
+    inputPassword: "julia1986 ",
+    inputEmail: "     julia1986@gmail.com"
+}
+
 export const invalidInputValues: Input = {
     inputLogin: "j",
     inputPassword: "jul12",

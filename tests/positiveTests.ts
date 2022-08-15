@@ -1,5 +1,5 @@
 import {RegistrationForm} from "../registrationForm/registrationForm";
-import {correctInputValues, correctInputValuesInUpperCase} from "../fixtures/inputValues";
+import {correctInputValues, correctInputValuesInUpperCase, correctInputValuesWithSpaces} from "../fixtures/inputValues";
 import {expectedValues} from "../fixtures/expectedValues";
 import {addSign, dotSign} from "../fixtures/requiredValues";
 
@@ -17,12 +17,20 @@ describe("Positive tests for checking registration form", () => {
         expect(RegistrationForm.loginField(correctInputValuesInUpperCase.inputLogin)).toEqual(expectedValues.inputLogin);
     });
 
+    test("Assert value for login field with spaces is the same as expected", () => {
+        expect(RegistrationForm.loginField(correctInputValuesWithSpaces.inputLogin)).toEqual(expectedValues.inputLogin);
+    });
+
     test("Assert correct value for password field is accepted", () => {
         expect(RegistrationForm.passwordField(correctInputValues.inputPassword)).toBeTruthy();
     });
 
     test("Assert value for password field is the same as expected", () => {
         expect(RegistrationForm.passwordField(correctInputValues.inputPassword)).toEqual(expectedValues.inputPassword);
+    });
+
+    test("Assert value for password field with spaces is the same as expected", () => {
+        expect(RegistrationForm.passwordField(correctInputValuesWithSpaces.inputPassword)).toEqual(expectedValues.inputPassword);
     });
 
     test("Assert correct value for email field is accepted", () => {
@@ -43,5 +51,9 @@ describe("Positive tests for checking registration form", () => {
 
     test("Assert value for email field in upper case is the same as expected", () => {
         expect(RegistrationForm.emailField(correctInputValuesInUpperCase.inputEmail)).toEqual(expectedValues.inputEmail);
+    });
+
+    test("Assert value for email field with spaces is the same as expected", () => {
+        expect(RegistrationForm.emailField(correctInputValuesWithSpaces.inputEmail)).toEqual(expectedValues.inputEmail);
     });
 });
